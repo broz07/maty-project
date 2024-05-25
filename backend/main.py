@@ -16,7 +16,8 @@ APP_PASSWORD = "admin"
 
 PASSWORD_SALT = "somesalt"
 
-host="localhost"
+# host="localhost" # for localhost
+host="postgres" # for docker
 database="postgres"
 user="postgres"
 password="root"
@@ -31,7 +32,8 @@ origins = [
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,  # Allow specific origins
+    # allow_origins=origins,  # Allow specific origins
+    allow_origins=["*"],  # Allow all origins
     allow_credentials=True,
     allow_methods=["*"],  # Allow all methods
     allow_headers=["*"],  # Allow all headers

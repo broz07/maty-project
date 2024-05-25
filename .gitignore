@@ -131,3 +131,5 @@ dist
 
 __pycache__/
 .venv/
+
+postgres-data/
