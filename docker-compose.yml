@@ -18,6 +18,9 @@ services:
     build: 
       context: ./frontend
       dockerfile: frontend.dockerfile
+    depends_on:
+      - backend
+      - postgres
     ports:
       - "3000:3000"
     deploy:
