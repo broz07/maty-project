@@ -1,0 +1,62 @@
+@import '../_variables.scss';
+
+
+.main{
+    position: relative;
+    top: 4rem;
+    height: calc(100vh - 4rem);
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    h1{
+        font-size: 6rem;
+        margin-top: 0;
+        margin-bottom: 1rem;
+    }
+
+    h2{
+        font-size: 3rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        font-weight: 400;
+    }
+
+    h4{
+        font-size: 2rem;
+        margin:0
+    }
+
+    table{
+        width: 1000px;
+        border-collapse: collapse;
+        margin-top: 1rem;
+        border-radius: 10px;
+        overflow: hidden;
+        padding: 1rem;
+
+        thead{
+            background-color: $dark;
+
+            tr{
+                th{
+                    padding: 1rem;
+                }
+            }
+        }
+        tbody{
+            background-color: $primary-color;
+
+            tr{
+                td{
+                    padding: 1rem;
+                }
+            }
+        }
+    }
+}

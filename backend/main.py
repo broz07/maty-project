@@ -26,16 +26,12 @@ port="5432"
 app = FastAPI()
 
 # Configure CORS
-origins = [
-    "http://127.0.0.1:3000",  # Your frontend origin
-]
 
 app.add_middleware(
     CORSMiddleware,
-    # allow_origins=origins,  # Allow specific origins
-    allow_origins=["*"],  # Allow all origins
+    allow_origins=["http://localhost:3000"],  # Allow your Vite app to communicate
     allow_credentials=True,
-    allow_methods=["*"],  # Allow all methods
+    allow_methods=["*"],  # Allow all HTTP methods
     allow_headers=["*"],  # Allow all headers
 )
 
@@ -70,8 +66,15 @@ def get_users():
     return users
 
 @app.get("/user")
-def get_user(id: int):
-    query = f"select users.id, users.name, surname, username, email, role_id, roles.name as role, roles.description as role_description from public.users inner join public.roles on users.role_id = roles.id where users.id={id};"  
+def get_user(id: int | None = None, username: str | None = None):
+    if id is None and username is None:
+        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="ID or username must be specified!")
+
+    if id is not None:
+        query = f"select users.id, users.name, surname, username, email, role_id, roles.name as role, roles.description as role_description from public.users inner join public.roles on users.role_id = roles.id where users.id={id};"  
+    else:
+        query = f"select users.id, users.name, surname, username, email, role_id, roles.name as role, roles.description as role_description from public.users inner join public.roles on users.role_id = roles.id where users.username='{username}';"
+
     conn = connect()
     cur = conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
 
@@ -117,6 +120,7 @@ def create_user(body: AddUserRequestBody, credentials: HTTPBasicCredentials = De
 
     conn = connect()
     cur = conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
+    
     try:
         cur.execute(query)
         conn.commit()
@@ -195,6 +199,9 @@ def delete_user(id: int, credentials: HTTPBasicCredentials = Depends(HTTPBasic()
 
 @app.post("/login")
 def login(credentials: HTTPBasicCredentials = Depends(HTTPBasic())):
+    print(credentials.username)
+    print(credentials.password)
+
     query = f"select count(*) from public.users where username='{credentials.username}' and password='{hash_password(credentials.password)}';"
 
     conn = connect()

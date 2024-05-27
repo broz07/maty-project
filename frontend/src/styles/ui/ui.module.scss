@@ -1,0 +1,165 @@
+@import '../_variables.scss';
+
+.navbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    background-color: $primary-color;
+    height: 4rem;
+
+    nav{
+        ul{
+            display: flex;
+            gap: 1rem;
+            list-style: none;
+            align-items: center;
+
+            li{
+                a{
+                    text-decoration: none;
+                    color: var(--text-color);
+                    font-weight: 500;
+                    font-size: 1.2rem;
+                    transition: color 0.3s;
+
+                    &:hover{
+                        color: $darker;
+                    }
+                }
+            }
+        }
+    }
+
+    div{
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        gap: 1rem;
+        justify-content: space-between;
+
+        button{
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 5px;
+            background-color: $dark;
+            color: var(--text-color);
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s;
+
+            &:hover{
+                background-color: $darker;
+            }
+        }
+    }
+}
+
+.modal{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 3000;
+    justify-content: center;
+    align-items: center;
+    
+    .modalBody{
+        width: 800px;
+        background-color: $secondary-color;
+        padding: 1rem;
+        border-radius: 10px;
+        
+        h1{
+            text-align: center;
+            font-size: 3rem;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            width: 100%;
+        }
+
+        button{
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 5px;
+            background-color: $dark;
+            color: var(--text-color);
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s;
+
+            &:first-of-type{
+                margin-right: 0.5rem;
+            }
+
+            &:hover{
+                background-color: $darker;
+            }
+        }
+    }
+
+    &.opened{
+        display: flex;
+    }
+
+    form{
+        display: flex; 
+        flex-direction: column;
+        width: 100%;   
+        align-items: center;
+        justify-content: center;
+
+        label{
+            width: 400px;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        input{
+            width: 400px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border: none;
+            border-radius: 5px;
+            background-color: $primary-color;
+            font-weight: bold;
+            transition: background-color 0.3s;
+
+            &:focus{
+                background-color: $dark;
+            }
+
+            &::placeholder{
+                font-weight: bold;
+            }
+        }
+
+        select{
+            width: 432px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border: none;
+            border-radius: 5px;
+            background-color: $primary-color;
+            font-weight: 500;
+            transition: background-color 0.3s;
+            font-weight: bold;
+
+            &:focus{
+                background-color: $dark;
+            }
+
+            &::placeholder{
+                font-weight: bold;
+            }
+        }
+    }
+}

@@ -1,0 +1,98 @@
+@import '../_variables.scss';
+
+.main{
+    position: relative;
+    top: 4rem;
+    height: calc(100vh - 4rem);
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.formWrapper{
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    h1{
+        font-size: 4rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        width: 100%;
+    }
+
+    form{
+        display: flex; 
+        flex-direction: column;
+        width: 100%;   
+        align-items: center;
+        justify-content: center;
+
+        label{
+            width: 400px;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        input{
+            width: 400px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border: none;
+            border-radius: 5px;
+            background-color: $primary-color;
+            font-weight: bold;
+            transition: background-color 0.3s;
+
+            &:focus{
+                background-color: $dark;
+            }
+
+            &::placeholder{
+                font-weight: bold;
+            }
+        }
+
+        select{
+            width: 432px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border: none;
+            border-radius: 5px;
+            background-color: $primary-color;
+            font-weight: 500;
+            transition: background-color 0.3s;
+            font-weight: bold;
+
+            &:focus{
+                background-color: $dark;
+            }
+
+            &::placeholder{
+                font-weight: bold;
+            }
+        }
+
+        button{
+            width: 430px;
+            padding: 1rem;
+            border: none;
+            border-radius: 5px;
+            background-color: $dark;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+
+            &:hover{
+                background-color: $darker;
+            }
+        }
+    }
+}

@@ -1,0 +1,69 @@
+.main {
+  position: relative;
+  top: 4rem;
+  height: calc(100vh - 4rem);
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 0 1rem;
+  align-items: center;
+  justify-content: top;
+  text-align: center;
+}
+.main h1 {
+  font-size: 4rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.main table {
+  width: 1500px;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 1rem;
+}
+.main table thead {
+  background-color: #584D80;
+}
+.main table thead tr th {
+  padding: 0.5rem;
+}
+.main table tbody {
+  background-color: #6B59AE;
+}
+.main table tbody tr td {
+  padding: 0.5rem;
+}
+.main table tbody tr td button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #584D80;
+  color: var(--text-color);
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.main table tbody tr td button:first-child {
+  margin-right: 0.5rem;
+}
+.main table tbody tr td button:hover {
+  background-color: #383544;
+}
+
+.userAddButton {
+  padding: 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #584D80;
+  cursor: pointer;
+  color: var(--text-color);
+  transition: background-color 0.3s;
+  font-weight: bold;
+  width: 200px;
+}
+.userAddButton:hover {
+  background-color: #383544;
+  color: var(--text-color);
+}/*# sourceMappingURL=users.module.css.map */

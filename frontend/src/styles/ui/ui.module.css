@@ -1,0 +1,145 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  background-color: #6B59AE;
+  height: 4rem;
+}
+.navbar nav ul {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  align-items: center;
+}
+.navbar nav ul li a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 500;
+  font-size: 1.2rem;
+  transition: color 0.3s;
+}
+.navbar nav ul li a:hover {
+  color: #383544;
+}
+.navbar div {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: space-between;
+}
+.navbar div button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #584D80;
+  color: var(--text-color);
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.navbar div button:hover {
+  background-color: #383544;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 3000;
+  justify-content: center;
+  align-items: center;
+}
+.modal .modalBody {
+  width: 800px;
+  background-color: #7B62D7;
+  padding: 1rem;
+  border-radius: 10px;
+}
+.modal .modalBody h1 {
+  text-align: center;
+  font-size: 3rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+.modal .modalBody button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #584D80;
+  color: var(--text-color);
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.modal .modalBody button:first-of-type {
+  margin-right: 0.5rem;
+}
+.modal .modalBody button:hover {
+  background-color: #383544;
+}
+.modal.opened {
+  display: flex;
+}
+.modal form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.modal form label {
+  width: 400px;
+  text-align: left;
+  font-weight: bold;
+}
+.modal form input {
+  width: 400px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #6B59AE;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+.modal form input:focus {
+  background-color: #584D80;
+}
+.modal form input::-moz-placeholder {
+  font-weight: bold;
+}
+.modal form input::placeholder {
+  font-weight: bold;
+}
+.modal form select {
+  width: 432px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #6B59AE;
+  font-weight: 500;
+  transition: background-color 0.3s;
+  font-weight: bold;
+}
+.modal form select:focus {
+  background-color: #584D80;
+}
+.modal form select::-moz-placeholder {
+  font-weight: bold;
+}
+.modal form select::placeholder {
+  font-weight: bold;
+}/*# sourceMappingURL=ui.module.css.map */

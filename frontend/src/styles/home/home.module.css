@@ -1,0 +1,48 @@
+.main {
+  position: relative;
+  top: 4rem;
+  height: calc(100vh - 4rem);
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 0 1rem;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.main h1 {
+  font-size: 6rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+.main h2 {
+  font-size: 3rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-weight: 400;
+}
+.main h4 {
+  font-size: 2rem;
+  margin: 0;
+}
+.main table {
+  width: 1000px;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 1rem;
+}
+.main table thead {
+  background-color: #584D80;
+}
+.main table thead tr th {
+  padding: 1rem;
+}
+.main table tbody {
+  background-color: #6B59AE;
+}
+.main table tbody tr td {
+  padding: 1rem;
+}/*# sourceMappingURL=home.module.css.map */

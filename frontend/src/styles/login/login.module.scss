@@ -1,0 +1,69 @@
+@import '../_variables.scss';
+
+.main{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.formWrapper{
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    h1{
+        font-size: 4rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        width: 100%;
+    }
+
+    form{
+        display: flex; 
+        flex-direction: column;
+        width: 100%;
+        gap: 1rem;
+        align-items: center;
+        justify-content: center;
+
+        input{
+            width: 400px;
+            padding: 1rem;
+
+            border: none;
+            border-radius: 5px;
+            background-color: $primary-color;
+            font-weight: 500;
+            transition: background-color 0.3s;
+
+            &:focus{
+                background-color: $dark;
+            }
+
+            &::placeholder{
+                font-weight: bold;
+            }
+        }
+
+        button{
+            width: 430px;
+            padding: 1rem;
+            border: none;
+            border-radius: 5px;
+            background-color: $dark;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+
+            &:hover{
+                background-color: $darker;
+            }
+        }
+    }
+}

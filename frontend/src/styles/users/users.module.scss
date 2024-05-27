@@ -1,0 +1,83 @@
+@import '../_variables.scss';
+
+.main{
+    position: relative;
+    top: 4rem;
+    height: calc(100vh - 4rem);
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem;
+    align-items: center;
+    justify-content: top;
+    text-align: center;
+
+    h1{
+        font-size: 4rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    table{
+        width: 1500px;
+        border-collapse: collapse;
+        margin-top: 1rem;
+        border-radius: 10px;
+        overflow: hidden;
+        padding: 1rem;
+
+        thead{
+            background-color: $dark;
+
+            tr{
+                th{
+                    padding: 0.5rem;
+                }
+            }
+        }
+        tbody{
+            background-color: $primary-color;
+
+            tr{
+                td{
+                    padding: 0.5rem;
+                    button{
+                        padding: 0.5rem 1rem;
+                        border: none;
+                        border-radius: 5px;
+                        background-color: $dark;
+                        color: var(--text-color);
+                        font-weight: 500;
+                        cursor: pointer;
+                        transition: background-color 0.3s;
+
+                        &:first-child{
+                            margin-right: 0.5rem;
+                        }
+
+                        &:hover{
+                            background-color: $darker;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.userAddButton{
+    padding: 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: $dark;
+    cursor: pointer;
+    color: var(--text-color);
+    transition: background-color 0.3s;
+    font-weight: bold;
+    width: 200px;
+
+    &:hover{
+        background-color: $darker;
+        color: var(--text-color);
+    }
+}
