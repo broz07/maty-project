@@ -25,13 +25,10 @@ export const decryptUser = (encryptedUser: string): User | false => {
 }
 
 export const signIn = async (username: string, password: string): Promise<boolean> => {
-    try {
-        console.log('username', username)
-        console.log('password', password)
+    const API_URL = import.meta.env.VITE_API_URL
 
-        // const authHeader = `Basic ${btoa(`${username}:${password}`)}`
-        
-        let response = await axios.post('http://localhost:8000/login',{}, {
+    try {
+        let response = await axios.post(`${API_URL}/login`,{}, {
             withCredentials: true,
             auth: {
                 username: username,
@@ -43,7 +40,7 @@ export const signIn = async (username: string, password: string): Promise<boolea
             return false
         }
 
-        response = await axios.get('http://localhost:8000/user',
+        response = await axios.get(`${API_URL}/user`,
             {
                 params: {
                     username: username

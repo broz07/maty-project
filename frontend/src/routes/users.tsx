@@ -21,6 +21,8 @@ export interface User {
 }
 // eslint-disable-next-line react-refresh/only-export-components
 export async function loader(): Promise<{loggedUser: User, users: User[]} | Response>{
+    const API_URL = import.meta.env.VITE_API_URL
+
     const loggedUserString = localStorage.getItem('loggedUser')
 
     if (!loggedUserString) return redirect('/login')
@@ -31,7 +33,7 @@ export async function loader(): Promise<{loggedUser: User, users: User[]} | Resp
 
     let users: User[] = []
     try {
-        const response = await axios.get('http://localhost:8000/users')
+        const response = await axios.get(`${API_URL}/users`)
         users = response.data as User[]
     } catch (error) {
 		const axiosError = error as AxiosError

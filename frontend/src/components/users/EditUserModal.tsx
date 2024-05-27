@@ -16,6 +16,8 @@ interface EditUserModalProps {
 
 
 export const EditUserModal: React.FC<EditUserModalProps> = ({opened, handleClose, userToEdit}) =>{
+    const API_URL = import.meta.env.VITE_API_URL
+
     const navigate = useNavigate()
 
     const name = useRef<HTMLInputElement>(null)
@@ -43,7 +45,7 @@ export const EditUserModal: React.FC<EditUserModalProps> = ({opened, handleClose
         }
 
         try {
-            await axios.put(`http://localhost:8000/user`, requestBody, {
+            await axios.put(`${API_URL}/user`, requestBody, {
                 auth: {
                     username: 'admin',
                     password: 'admin'

@@ -11,12 +11,14 @@ interface DeleteUserModalProps {
 }
 
 export const DeleteUserModal: React.FC<DeleteUserModalProps> = ({opened, handleClose, userToDelete}) =>{
+    const API_URL = import.meta.env.VITE_API_URL
+
     const navigate = useNavigate()
 
     const handleDelete = async () => {
 
         try {
-            await axios.delete(`http://localhost:8000/user?id=${userToDelete?.id}`, {
+            await axios.delete(`${API_URL}/user?id=${userToDelete?.id}`, {
                 auth: {
                     username: 'admin',
                     password: 'admin'

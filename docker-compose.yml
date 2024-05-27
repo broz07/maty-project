@@ -13,6 +13,19 @@ services:
           delay: 2s
           max_attempts: 3
           window: 120s  
+
+  frontend:
+    build: 
+      context: ./frontend
+      dockerfile: frontend.dockerfile
+    ports:
+      - "3000:3000"
+    deploy:
+      restart_policy:
+          condition: on-failure
+          delay: 2s
+          max_attempts: 3
+          window: 120s
       
   postgres:
     image: postgres:16.1

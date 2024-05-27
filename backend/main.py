@@ -29,7 +29,7 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],  # Allow your Vite app to communicate
+    allow_origins=["http://localhost:3000", "frontend:3000"],  # Allow your Vite app to communicate
     allow_credentials=True,
     allow_methods=["*"],  # Allow all HTTP methods
     allow_headers=["*"],  # Allow all headers

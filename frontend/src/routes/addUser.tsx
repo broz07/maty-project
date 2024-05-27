@@ -26,14 +26,14 @@ export async function loader(): Promise<{loggedUser: User} | Response>{
         return redirect('/')
     }
 
-    // K@f!ck0123
-
     return {
         loggedUser: loggedUser,
     }
 }
 
 export const action = async ({ request }: { request: Request }) => {
+    const API_URL = import.meta.env.VITE_API_URL
+
     const formData = await request.formData();
     const name = formData.get('name');
     const surname = formData.get('surname');
@@ -67,7 +67,7 @@ export const action = async ({ request }: { request: Request }) => {
         role_id: parseInt(role.toString())
     }
     try {
-        const response = await axios.post('http://localhost:8000/user', requstbody, {
+        const response = await axios.post(`${API_URL}/user`, requstbody, {
             auth: {
                 username: 'admin',
                 password: 'admin'
