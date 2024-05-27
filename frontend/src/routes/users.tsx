@@ -91,7 +91,7 @@ export default function Users() {
                             <th>Email</th>
                             <th>Role</th>
                             <th>Popis role</th>
-                            <th></th>
+                            {loggedUser.role === 'admin' ? <th></th> : null}
                         </tr>
                     </thead>
                     <tbody>
@@ -104,6 +104,7 @@ export default function Users() {
                                 <td>{user.email}</td>
                                 <td>{user.role}</td>
                                 <td>{user.role_description}</td>
+                                {loggedUser.role === 'admin' ? 
                                 <td>
                                     <button
                                         onClick={() => {
@@ -117,7 +118,7 @@ export default function Users() {
                                             setSelectedUser(user)
                                     }
                                     }>Smazat</button>
-                                </td>
+                                </td> : null}
                             </tr>
                         ))}
                     </tbody>
